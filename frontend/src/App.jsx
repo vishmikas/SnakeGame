@@ -255,7 +255,6 @@ export default function App() {
             <span className={`hud-item level-badge ${levelFlash ? "flash" : ""}`}>
               LVL <strong>{gameState.level}</strong>
             </span>
-            <span className="hud-item speed-badge">⚡{gameState.speed}ms</span>
           </div>
         )}
       </header>
