@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import "./App.css";
 
-// Uses Railway backend on Vercel, falls back to localhost for local development
 const API = (import.meta.env.VITE_API_URL || "http://localhost:8080").replace(/\/$/, "");
 const CELL = 24;
 
@@ -45,26 +44,36 @@ export default function App() {
   }, [gameState]);
 
   const apiNewGame = async (selectedSkin) => {
-    const res = await fetch(`${API}/api/game/new?skin=${selectedSkin}`, {
+    const url = `${API}/api/game/new?skin=${selectedSkin}`;
+    console.log("VITE_API_URL =", import.meta.env.VITE_API_URL);
+    console.log("API =", API);
+    console.log("Requesting:", url);
+
+    const res = await fetch(url, {
       method: "POST",
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to start game: ${res.status}`);
+      const text = await res.text();
+      throw new Error(`Failed to start game: ${res.status} ${text}`);
     }
 
     return res.json();
   };
 
   const apiTick = async (state, direction) => {
-    const res = await fetch(`${API}/api/game/tick`, {
+    const url = `${API}/api/game/tick`;
+    console.log("Requesting:", url);
+
+    const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ state, direction }),
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to update game: ${res.status}`);
+      const text = await res.text();
+      throw new Error(`Failed to update game: ${res.status} ${text}`);
     }
 
     return res.json();
@@ -97,7 +106,7 @@ export default function App() {
       tickRef.current = setInterval(runTick, next.speed);
     } catch (err) {
       console.error("Tick error:", err);
-      setError("Backend connection failed. Check Railway URL or CORS settings.");
+      setError(`Backend connection failed: ${err.message}`);
       clearInterval(tickRef.current);
       setScreen("menu");
     }
@@ -116,7 +125,7 @@ export default function App() {
         tickRef.current = setInterval(runTick, state.speed);
       } catch (err) {
         console.error("Start game error:", err);
-        setError("Could not connect to backend. Check VITE_API_URL in Vercel.");
+        setError(`Could not connect to backend: ${err.message}`);
       }
     },
     [skin, runTick]
@@ -222,8 +231,8 @@ export default function App() {
           ? "RIGHT"
           : "LEFT"
         : dy > 0
-        ? "DOWN"
-        : "UP";
+          ? "DOWN"
+          : "UP";
   };
 
   const colors = SKINS[skin];
