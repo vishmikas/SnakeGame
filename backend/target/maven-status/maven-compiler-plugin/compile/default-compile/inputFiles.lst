@@ -1,4 +1,8 @@
 /Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/GameFrame.java
+/Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/service/GameService.java
 /Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/SnakeGameApplication.java
+/Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/model/MoveRequest.java
 /Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/SnakeGame.java
+/Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/controller/GameController.java
 /Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/GamePanel.java
+/Users/dilumsamarathunga/Documents/GitHub/SnakeGame/backend/src/main/java/com/SnakeGame/model/GameState.java
