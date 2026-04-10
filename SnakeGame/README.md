@@ -12,8 +12,5 @@ A simple classic Snake Game built using **Java Swing** and **AWT**.
 2. Open it in any Java IDE (e.g. IntelliJ IDEA, Eclipse, NetBeans).
 3. Run `GameFrame.java`.
 
-## 📸 Preview
-*(You can add a screenshot of your game here later)*
-
 ## 🧑‍💻 Author
 **Dilum Samarathunga**
