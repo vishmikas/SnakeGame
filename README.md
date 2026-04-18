@@ -1,16 +1,71 @@
-# 🐍 Snake Game (Java)
+# 🐍 Snake Game — Full Stack (React + Spring Boot)
 
-A simple classic Snake Game built using **Java Swing** and **AWT**.
+A modern **full-stack Snake Game** built with a **React (Vite) frontend** and a **Spring Boot backend**, where the game logic is handled on the server and the UI is rendered on the client.
 
-## 🎮 How to Play
-- Use the **Arrow Keys** to control the snake.
-- Eat apples to grow longer.
-- Avoid colliding with the walls or yourself!
+🔗 **Live Demo (Vercel):**  
+👉 https://snake-game-eight-kohl.vercel.app/
 
-## 🚀 How to Run
-1. Download or clone the repository.
-2. Open it in any Java IDE (e.g. IntelliJ IDEA, Eclipse, NetBeans).
-3. Run `GameFrame.java`.
+---
 
-## 🧑‍💻 Author
-**Dilum Samarathunga**
+# 🚀 Features
+
+- Classic Snake gameplay with smooth controls  
+- Backend-driven game logic  
+- Server-side validation for movement and collisions  
+- Score tracking and level progression  
+- Dynamic speed increase based on level  
+- Multiple skins (Classic / Neon / Fire)  
+- Keyboard + touch/mobile support  
+- Full client-server architecture
+
+---
+
+# 🏗️ Architecture
+
+Frontend (React + Vite)  
+↓  
+REST API Calls  
+↓  
+Backend (Spring Boot on Railway)  
+↓  
+Game Logic Processing
+
+### Key Idea
+- **Frontend** → handles UI, rendering, and user input  
+- **Backend** → handles game rules, movement, collisions, scoring, and progression  
+
+---
+
+# 🧩 Tech Stack
+
+## Frontend
+- React (Vite)
+- HTML Canvas
+- Axios / Fetch API
+- CSS
+
+## Backend
+- Java
+- Spring Boot
+- REST APIs
+
+## Deployment
+- Vercel → Frontend
+- Railway → Backend
+
+---
+
+# 📂 Project Structure
+
+```text
+snake-game/
+│
+├── frontend/          # React + Vite app
+│   ├── src/
+│   └── package.json
+│
+├── backend/           # Spring Boot app
+│   ├── src/main/java/
+│   └── pom.xml
+│
+└── README.md
